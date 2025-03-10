@@ -1,0 +1,24 @@
+//display the department numbers and average salaries for those departments
+ with maximum salary that is greater than 12000
+ans:
+     select department_id, Round(Avg(salary),2)
+    from employees
+    Group By department_id
+    Having Max(salary)>12000;
+
+ //display the name whose name start with 's'
+ans:
+     select first_name||'  '||last_name as "Full name"
+    from employees
+    where first_name Like's%';
+
+ //display the average salary of employees of department sales
+ans:
+    select Avg(salary)
+    from employees
+    where job_id Like '%SA%';
+ //display the name of employees joining in company in ascendind order
+ ans:
+    select first_name||'  '||last_name as "Full name", hire_date
+    from employees
+    order by hore_date ASC;

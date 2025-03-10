@@ -1,0 +1,26 @@
+create table emp1287046(
+    eid number (7) constraint emp_1287046_pk primary key,
+    ename varchar2(20) not null, 
+    salary number(7) not null,
+    address varchar2(20) not null,
+    hire_date varchar2(20) not null,
+);
+describe emp1287046;
+select*from emp1287046;
+
+alter table emp1287046 add(
+     dept_id number(6) not null,
+     dept_name varchar2(20) not null
+    
+);
+
+ 
+
+insert into emp1287046 values (1,'shemanto',20000,'azi');
+insert into emp1287046 values (2,'sheman',8000,'azim');
+insert into emp1287046 values (3,'shema',3000,'azimp');
+insert into emp1287046 values (4,'manto',50000,'azimpu');
+insert into emp1287046 values (5,'she',90000,'azimpur');
+
+select*from emp1287046;
+    
