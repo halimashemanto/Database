@@ -123,4 +123,22 @@ Ans;
                          WHERE JOB_ID='IT_PROG'));
 
 
+//68. Display the details of employees drawing the highest
+ salary in the department.
 
+ SELECT * FROM DEPARTMENTS
+ WHERE DEPARTMENT_ID IN
+                 (SELECT DEPARTMENT_ID FROM EMPLOYEES
+                 WHERE EMPLOYEE_ID IN 
+                        (SELECT EMPLOYEE_ID FROM JOB_HISTORY)
+                            GROUP BY DEPARTMENT_ID
+                             HAVING MAX(SALARY) >10000);
+
+
+ //29. Display job ID for jobs with average salary
+ more than 10000.
+ 
+ SELECT JOB_ID, AVG(SALARY) 
+ FROM EMPLOYEES
+ GROUP BY JOB_ID
+ HAVING AVG(SALARY)>10000;
