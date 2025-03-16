@@ -1,50 +1,51 @@
-                                                //1no ans
-
-create table innaya(
-    eid number(7) constraint innaya_pk  primary key,
-    emane varchar2(20) not null,
+create table emp_1287046(
+    eid number(6) constraint emp_1287046_eid_pk primary key,
+    ename VARCHAR2(25),
     salary number(10),
-    hire_date varchar2(25),
-    address varchar2 (30)
-    
+    hire_date varchar2 (20),
+    address varchar2(30)
+
 );
 
-describe innaya;
-select*from innaya;
+--2no ans
 
-
-                                                    //2no ans
-alter table innaya add(
-    dept_id number (10),
-    dept_name varchar2(40)
+alter table emp_1287046 add(
+    dept_id number(8),
+    dept_name VARCHAR2(20)
 );
-                                                    //3no ans
+
+--3no ans
+
+insert into emp_1287046 values(1,'sathe',2000,'01-01-2025','Azimpur',101,'AC');
+insert into emp_1287046 values(2,'sathe',2000,'01-01-2025','Azimpur',101,'AC');
+insert into emp_1287046 values(3,'sathe',2000,'01-01-2025','Azimpur',101,'AC');
+insert into emp_1287046 values(4,'sathe',2000,'01-01-2025','Azimpur',101,'AC');
 
 
-insert into innaya values(1,'suprova',2000,'01-01=2000','Azimpur');
-insert into innaya values (2,'sheman',8000,'01-01=2000','azim');
-insert into innaya values (3,'shema',3000,'01-01=2000','azimp');
-insert into innaya values (4,'manto',50000,'01-01=2000','azimpu');
-insert into innaya values (5,'she',90000,'01-01=2000','azimpur');
-insert into innaya values (6,'suprova',2000,'01-01=2000','Azimpur');
-insert into innaya values (7,'she',90000,'01-01=2000','azimpur',80,'ac');
+
+select*from emp_1287046;
+order by 1;
+
+--4no ans
+create view empVu
+    as select ename,dept_name, salary
+    from emp_1287046
+    where dept_id = 101;
+
+select * from empVu;
+
+--5no qus
+
+create SEQUENCE emp_1287046_eid_seq
+    start with 5
+    INCREMENT by 1
+    Maxvalue 9999
+    NOCACHE
+    NOCYCLE;
 
 
-                                                //4no ans
-create view innaya2
-as select last_name,salary
-from employees
-where dept_id=80;
+    insert into EMP_1287046 values (emp_1287046_eid_seq.nextval,'sathe',2000,'01-01-2025','Azimpur',101,'AC');
+      insert into EMP_1287046 values (emp_1287046_eid_seq.nextval,'sathe',2000,'01-01-2025','Azimpur',101,'AC');
 
-                                            //5no ans
-
-create sequence innayaEid_seq
-        start with 100
-        increment by 1
-        maxvalue 999999
-        nocache
-        nocycle;
-        
-select *innayaEid_seq.currval
-from*innaya;
-commit;
+select* from emp_1287046
+order by 1;
